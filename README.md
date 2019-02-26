@@ -25,7 +25,7 @@ If you’re already using an older version of ECM use the update CMDlet.
 Update-Module Exchange.Connection.Manager
 ```
 Thanks to the module auto load feature starting with PowerShell 3.0 you can use the ECM commands right away. However, if you’re having issues try to import ECM manually.
-```
+```Powershell
 Import-Module Exchange.Connection.Manager
 ```
 
@@ -33,23 +33,23 @@ Import-Module Exchange.Connection.Manager
 
 Create an Exchange Online Connection for your contoso tenant (contoso.onmicrosoft.com).
 
-```
+```Powershell
 New-ECMConnection -TenantName contosocom -Name EXOContoso -Credential (get-credential)
 ```
 Create an Exchange OnPrem Connection with `OnPrem` as command suffix.
-```
+```Powershell
 New-ECMOnPremConnection -Name Exchange2016 -Authentication Kerberos -URI https://mail.contoso.com/PowerShell -ConnectionSuffix OnPrem
 ```
 Remove all connections and do not ask for confirmation.
-```
+```Powershell
 Get-ECMConnection | Remove-ECMConnection -Confirm:$false
 ```
 Get all configured connections.
-```
+```Powershell
 Get-ECMConnection
 ```
 Connect to Exchange Online and Exchange OnPrem in a single shell and get all mailboxes.
-```
+```Powershell
 Connect-Exchange -Identity EXOContoso
 Connect-Exchange -Identity Exchange2016
 
@@ -61,7 +61,7 @@ $allMBX
 ```
 You can even use `Connect-Exchange` in a loop since ECM won’t reconnect your session when the session is already active but will reconnect your session when the session is broken or disconnected.
 
-```
+```Powershell
 do{
   Connect-Exchange EXOContoso
   $mbx = Get-Mailbox jdoe
