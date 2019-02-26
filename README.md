@@ -38,7 +38,7 @@ New-ECMConnection -TenantName contosocom -Name EXOContoso -Credential (get-crede
 ```
 Create an Exchange OnPrem Connection with `OnPrem` as command suffix.
 ```Powershell
-New-ECMOnPremConnection -Name Exchange2016 -Authentication Kerberos -URI https://mail.contoso.com/PowerShell -ConnectionSuffix OnPrem
+New-ECMOnPremConnection -Name Exchange2016 -Authentication Kerberos -URI http://mail.contoso.com/PowerShell -ConnectionSuffix OnPrem
 ```
 Remove all connections and do not ask for confirmation.
 ```Powershell
