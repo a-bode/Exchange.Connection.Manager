@@ -531,10 +531,11 @@ function New-ECMOnPremConnection {
                 Write-Error "A connection with the name $Name already exists. Please specify a differnet name."
                 return
             }
+
             $ConnectionObject = @{
                 'Name'           = $Name;
                 'SessionPrefix'  = $SessionPrefix;
-                'Credential'     = if ($Credential) {(Get-EncryptedCredential $Credential)};
+                'Credential'     = if ($PSBoundParameters.credential) {(Get-EncryptedCredential $PSBoundParameters.credential )};
                 'Type'           = 'OnPrem'
                 'URI'            = $URI
                 'Authentication' = $Authentication
