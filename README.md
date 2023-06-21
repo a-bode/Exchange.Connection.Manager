@@ -1,3 +1,4 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 # ⛔️ DEPRECATED: Exchange Connection Manager 2.0
 
 The new release finally adds support for Powershell Core‼️ You can now use ECM on basically any platform like macOS, Linux and even iOS using Azure Cloud Shell.
